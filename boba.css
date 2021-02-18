@@ -1,5 +1,22 @@
 
+.site-header-left {
+    display: inline-block;
+    margin-bottom: 10%;
+  }
+  .site-header-left li {
+    text-decoration: none;
+    display: inline;
+  }
 
+.searchTerm {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.distance {
+    width: 10%;
+
+}
 .card {
     box-shadow: 0 2px 8px #d3d3d3;
     transition: 0.3s;
@@ -16,7 +33,6 @@
 .card-content {
     padding-left: 2rem;
     padding-right: 1rem;
-
     padding-top: 1rem;
     padding-bottom: 3rem;
 }
@@ -26,4 +42,24 @@
     color: white;
     padding: 1rem 2rem;
 
+}
+.weather {
+    background-image: url(city.jpg);
+    margin-bottom: 5%;
+    background-size: cover;
+    color: white;
+    padding-top: 11%;
+    padding-bottom: 8%;
+
+}
+.weather span {
+    font-weight: 300; 
+    background-color: black;
+    opacity: 0.8;
+}
+.currentTemp {
+    font-size: 2.5rem;
+    font-weight: 100;
+    background-color: black;
+    opacity: 0.8;
 }

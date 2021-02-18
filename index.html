@@ -4,30 +4,67 @@
 <html>    
     <head>        
         <title>
-            Boba
+            Boba Blog
         </title>        
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css"> 
         <link rel="stylesheet" href="boba.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     </head>    
     <body>
-        <div class="container">
-            <p>Where would you like to look?</p>
+
+
+        <div class="header">
+            <!-- Site Navigation -->
+
+              <ul class="site-header-left">
+                
+                <li >
+                  <a href="#about">Boba Blog</a> /
+                </li>
+                <li>
+                  <a href="#contact">Boba Search </a>
+                </li>
+
+              </ul>
+        </div>
+
+
+
             <div id="foursquare" class="foursquare">
-                <div class="search">
+                <div class="container">
+
+                <div class="search text-center">
+                    <h1>Search for Boba</h1>
+                    
                     <input type="text" id="searchTerm" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba(); getWeather();">
-                    <button type="submit" id="searchButton" class="searchButton" @click="searchBoba(); getWeather();">
-                      <i class="fa fa-search"></i>
+                    <button type="submit" id="searchButton" class="searchButton btn btn-primary" @click="searchBoba(); getWeather();">
+                        Search
                    </button>
                    <br>
-                   Distance (km): <input type= "text" v-model="radiuskm" min="0" max="100" placeholder="Please choose a distance">
+                   Distance: <input type= "text" class="distance" v-model="radiuskm" min="0" max="100"> km
+                   <br>
                    0 <input type="range" min="0" max="100" value="10" class="slider" id="myRange" v-model="radiuskm"> 100km
 
                    <hr>
                  </div>
+                </div>
+        
+                 <div class="weather text-center">
+                    <h3><span>{{weather.name}}</span> <!--img class = "weathericon" v-bind:src="icon"--></h3>                     
+                    <h4 class="currentTemp">{{kelvinToFahrenheit(weather.main.temp)}}&deg;F / {{kelvinToCelsius(weather.main.temp)}}&deg;C</h4>
+                    <span><small>{{weather.weather[0].description}}</small></span>
+
+                    <!--div>
+                        <p>H: {{kelvinToFahrenheit(weather.main.temp_max)}}&deg;F / {{kelvinToCelsius(weather.main.temp_max)}}&deg;C</p>
+                        <p>L: {{kelvinToFahrenheit(weather.main.temp_min)}}&deg;F / {{kelvinToCelsius(weather.main.temp_min)}}&deg;C</p>
+                    </div-->
+
+                    
+                </div>
+                <div class="container">
+
                 <div class="card-container row">
                     <div class="col-lg-4" v-for="venue in venues">
                         <div class="card">
@@ -42,20 +79,7 @@
     
                     </div>
                 </div>
-                <div class="weather">
-                    {{weather.name}} /
-                    {{weather.weather[0].description}}
-                    <br>
-                    C: {{kelvinToFahrenheit(weather.main.temp)}}&deg;F /
-                    H: {{kelvinToFahrenheit(weather.main.temp_max)}}&deg;F /
-                    L: {{kelvinToFahrenheit(weather.main.temp_min)}}&deg;F
-                    <br>
-                    C: {{kelvinToCelsius(weather.main.temp)}}&deg;F /
-                    H: {{kelvinToCelsius(weather.main.temp_max)}}&deg;F /
-                    L: {{kelvinToCelsius(weather.main.temp_min)}}&deg;F
-
-                    <img class = "weathericon" v-bind:src="icon">
-                </div>
+                
 
             </div>
 

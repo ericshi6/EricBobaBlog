@@ -14,11 +14,12 @@ var foursquare = new Vue({                
     el: '#foursquare',                
     data: {                    
         message: 'Hello Vue!',  
-        cityQuery: 'boston',   
-        radiuskm: 10,      //The maximum supported radius is currently 100,000 meters         
+        cityQuery: '91101',   
+        radiuskm: 20,      //The maximum supported radius is currently 100,000 meters         
         venues: [],
         weather: [],
-        icon: ''              
+        icon: '',
+        otherUnit: 'Farenheight'         
     },                
     methods: {                    
         //search location 
