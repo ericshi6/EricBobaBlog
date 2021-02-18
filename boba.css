@@ -1,0 +1,29 @@
+
+
+.card {
+    box-shadow: 0 2px 8px #d3d3d3;
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 3%;
+    max-width: 80vw;
+    height: 90%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 green;
+}
+
+.card-content {
+    padding-left: 2rem;
+    padding-right: 1rem;
+
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.card-title {
+    background-color: #2dc4c0;
+    color: white;
+    padding: 1rem 2rem;
+
+}
