@@ -11,14 +11,15 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css"> 
         <link rel="stylesheet" href="boba.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     </head>    
     <body>
         <div class="container">
             <p>Where would you like to look?</p>
             <div id="foursquare" class="foursquare">
                 <div class="search">
-                    <input type="text" id="searchTerm" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba()">
-                    <button type="submit" id="searchButton" class="searchButton" v-on:click="searchBoba">
+                    <input type="text" id="searchTerm" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba(); getWeather();">
+                    <button type="submit" id="searchButton" class="searchButton" @click="searchBoba(); getWeather();">
                       <i class="fa fa-search"></i>
                    </button>
                    <br>
@@ -41,28 +42,36 @@
     
                     </div>
                 </div>
+                <div class="weather">
+                    {{weather.name}} /
+                    {{weather.weather[0].description}}
+                    <br>
+                    C: {{kelvinToFahrenheit(weather.main.temp)}}&deg;F /
+                    H: {{kelvinToFahrenheit(weather.main.temp_max)}}&deg;F /
+                    L: {{kelvinToFahrenheit(weather.main.temp_min)}}&deg;F
+                    <br>
+                    C: {{kelvinToCelsius(weather.main.temp)}}&deg;F /
+                    H: {{kelvinToCelsius(weather.main.temp_max)}}&deg;F /
+                    L: {{kelvinToCelsius(weather.main.temp_min)}}&deg;F
+
+                    <img class = "weathericon" v-bind:src="icon">
+                </div>
 
             </div>
 
         </div>
-<!--
-            <div class = container>            
-        <div id="foursquare"> 
-        <div class="card" v-for="venue in venues">                    
-            <h3 class="card-title">{{venue.name}}</h3>                    
-                <div class="card-content">                        
-            {{venue.location.formattedAddress[0]}} 
-        <br>                        
-        {{venue.location.formattedAddress[1]}} 
-        <br>                        
-        {{venue.location.formattedAddress[2]}}                    
-        </div>                    
-        
-                        
-        </div>            
-        </div>        
-        </div>   
--->
+        <footer class="text-center">
+            <hr>
+
+            <small>
+              Connect with Eric! @ 
+              <a href="https://www.linkedin.com/in/ericshi6/" class="button button-contact" target="_blank">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+              / <a href="https://github.com/ericshi6" class="button button-contact" target="_blank">GitHub <i class="fa fa-github"></i></a>
+              / <a href="https://ericshi6.github.io/portfolio/" class="button button-contact" target="_blank">Portfolio</a>
+
+            </small>
+            <hr>
+          </footer>
 
         <script src="boba.js"></script>
     </body>
