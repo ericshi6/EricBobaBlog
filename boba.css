@@ -32,7 +32,7 @@
 }
 
 .distance {
-    width: 12%;
+    width: 20%;
 
 }
 .card {
@@ -42,8 +42,6 @@
     margin-bottom: 3%;
     max-width: 80vw;
     max-height: 40vh;
-    height: 90%;
-
 }
 
 .card:hover {
@@ -105,3 +103,9 @@
     max-width: 800px;
     border-radius: 3px;
 }
+
+@media only screen and (min-width: 900px) {
+    .card {
+        height: 90%;
+    }
+  }
