@@ -24,7 +24,7 @@ var foursquare = new Vue({                
     methods: {                    
         //search location 
         searchBoba: function(){
-            var endpoint = `${url}?client_id=${clientID}&client_secret=${clientSecret}&limit=${limit}&near=${this.cityQuery}&v=20210217&radius=${this.radiuskm*1000}&query=${boba}&sortByPopularity=0&openNow=0`;    
+            var endpoint = `${url}?client_id=${clientID}&client_secret=${clientSecret}&limit=${limit}&near=${this.cityQuery}&v=20210217&radius=${this.radiuskm*1000}&query=${boba}`;    
             fetch(endpoint)                    
             .then(response => response.json())                    
             .then(json => { 
@@ -53,7 +53,7 @@ var foursquare = new Vue({                
         }
     },                
     created() {
-        var endpoint = `${url}?client_id=${clientID}&client_secret=${clientSecret}&limit=${limit}&near=${this.cityQuery}&v=20210217&radius=${this.radiuskm*1000}&query=${boba}&sortByPopularity=0&openNow=0`;    
+        var endpoint = `${url}?client_id=${clientID}&client_secret=${clientSecret}&limit=${limit}&near=${this.cityQuery}&v=20210217&radius=${this.radiuskm*1000}&query=${boba}`;    
         fetch(endpoint)                    
         .then(response => response.json())                    
         .then(json => {                        
