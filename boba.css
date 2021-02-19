@@ -98,3 +98,8 @@
 
 .cafe:hover {
 }
+
+.cafe img {
+    width: 88%;
+    max-width: 800px;
+}
