@@ -26,6 +26,10 @@
     color: white;
   }
 
+  a {
+      color: #2dc4c0;
+  }
+
 .searchTerm {
     width: 70%;
     margin-bottom: 10px;
@@ -155,7 +159,7 @@
     iframe {
         border:0; 
         height: 450px; 
-        width: 600px;
+        width: 750px;
       }
       .accordion {
         width: 20%;
