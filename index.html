@@ -28,7 +28,15 @@
                 <div class="search text-center">
                     <h1 style="font-weight:220">Search for Boba</h1>
                     
-                    <input type="text" id="searchTerm" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba(); getWeather();">
+                    <input type="text" id="searchTerm" list="zipcodes" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba(); getWeather();">
+                    <datalist id="zipcodes">
+                        <option value="San Gabriel">Los Angeles 626</option>
+                        <option value="92614">Irvine</option>
+                        <option value="02115">Boston</option>
+                        <option value="San Francisco"></option>
+                        <option value="Manhattan">New York</option>
+
+                      </datalist>
                     <button type="submit" id="searchButton" class="searchButton btn btn-primary" @click="searchBoba(); getWeather();">
                         Search
                    </button>
@@ -65,8 +73,6 @@
                                 <div>{{venue.location.formattedAddress[2]}}</div>
                             </div>
                         </div>
-                        
-    
                     </div>
                 </div>
                 
