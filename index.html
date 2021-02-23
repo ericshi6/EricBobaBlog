@@ -27,6 +27,9 @@
 
                 <div class="search text-center">
                     <h1 style="font-weight:220">Search for Boba</h1>
+                    <hr>
+                    <p>Enter a city, state, or zipcode of where you would like to search.</p>
+                    <p>See blog for <a href="./blog.html">personal recommendations.</a></p>
                     
                     <input type="text" id="searchTerm" list="zipcodes" class="searchTerm" v-model="cityQuery" placeholder="Please enter a city or zip code" @keyup.enter="searchBoba(); getWeather();">
                     <datalist id="zipcodes">
@@ -44,9 +47,9 @@
                    Distance: <input type= "text" class="distance" v-model="radiuskm" min="0" max="100"> km
                    <br>
                    0 <input type="range" min="0" max="100" value="10" class="slider" id="myRange" v-model="radiuskm"> 100km
-
                    <hr>
                  </div>
+
                 </div>
         
                  <div class="weather text-center">
@@ -82,7 +85,9 @@
         </div>
         <footer class="text-center">
             <hr>
-
+            <p class="">
+                <a href="#"> Back to top </a> 
+              </p>
             <small>
               Connect with Eric! @ 
               <a href="https://www.linkedin.com/in/ericshi6/" class="button button-contact" target="_blank">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
