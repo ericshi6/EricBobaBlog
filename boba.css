@@ -1,3 +1,6 @@
+.text-secondary {
+  font-family: roboto, sans-serif;
+}
 .topnav {
     overflow: hidden;
     background-color: #333;
